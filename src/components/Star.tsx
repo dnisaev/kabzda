@@ -3,6 +3,7 @@ import React from "react";
 type StarProps = {
     selected: boolean
 }
+
 export function Star(props: StarProps) {
 
     if (props.selected) {

@@ -5,7 +5,7 @@ import {Rating} from "./components/Rating";
 import {PageTitle} from "./components/PageTitle";
 
 
-function App() {
+export function App() {
     return (
         <div className="App">
             <div>
@@ -21,5 +21,3 @@ function App() {
         </div>
     );
 }
-
-export default App;

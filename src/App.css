@@ -7,10 +7,10 @@
 }
 
 img {
-    width: 300px;
+    max-width: 300px;
 }
 
 .stars {
     margin: 3px;
-    font-size: 20px;
+    font-size: 40px;
 }

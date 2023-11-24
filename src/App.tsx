@@ -4,6 +4,8 @@ import './App.css';
 // import {Rating} from "./components/Rating";
 // import {PageTitle} from "./components/PageTitle";
 import OnOff from "./components/OnOff/OnOff";
+import Accordion from "./components/Accordion/Accordion";
+import UncontrolledAccordion from "./components/Accordion/UncontrolledAccordion";
 
 
 export function App() {
@@ -22,7 +24,8 @@ export function App() {
         // </div>
         <div>
             <OnOff />
-            {/*<OnOff on={false}/>*/}
+            <Accordion titleValue={"Controlled"} collapsed={false}/>
+            <UncontrolledAccordion titleValue={"Uncontrolled"}/>
         </div>
     );
 }

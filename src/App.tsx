@@ -24,8 +24,8 @@ export function App() {
         // </div>
         <div>
             <OnOff />
-            <Accordion titleValue={"Controlled"} collapsed={false}/>
-            <UncontrolledAccordion titleValue={"Uncontrolled"}/>
+            <Accordion titleValue={"Controlled Menu"} collapsed={false}/>
+            <UncontrolledAccordion titleValue={"Uncontrolled Menu"}/>
         </div>
     );
 }

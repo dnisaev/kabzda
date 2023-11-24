@@ -3,15 +3,15 @@ import {Star} from "../Star";
 
 export function UncontrolledRating() {
 
-    let [count, setCount] = useState(1)
+    let [value, setValue] = useState(1)
 
     return (
         <div>
-            <Star selected={count >= 1}/><button onClick={()=>{setCount(1)}}>1</button>
-            <Star selected={count >= 2}/><button onClick={()=>{setCount(2)}}>2</button>
-            <Star selected={count >= 3}/><button onClick={()=>{setCount(3)}}>3</button>
-            <Star selected={count >= 4}/><button onClick={()=>{setCount(4)}}>4</button>
-            <Star selected={count >= 5}/><button onClick={()=>{setCount(5)}}>5</button>
+            <Star selected={value >= 1}/><button onClick={()=>{setValue(1)}}>1</button>
+            <Star selected={value >= 2}/><button onClick={()=>{setValue(2)}}>2</button>
+            <Star selected={value >= 3}/><button onClick={()=>{setValue(3)}}>3</button>
+            <Star selected={value >= 4}/><button onClick={()=>{setValue(4)}}>4</button>
+            <Star selected={value >= 5}/><button onClick={()=>{setValue(5)}}>5</button>
         </div>
     )
 }

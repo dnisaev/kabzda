@@ -1,13 +1,9 @@
 import React, {useState} from 'react';
 import {Star} from "../Star";
 
-type RatingProps = {
-    value: number
-}
+export function UncontrolledRating() {
 
-export function UncontrolledRating(props: RatingProps) {
-
-    let [count, setCount] = useState(props.value)
+    let [count, setCount] = useState(1)
 
     return (
         <div>

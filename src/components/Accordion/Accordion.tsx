@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './Accordion.module.css';
 
 type AccordionPropsType = {
     titleValue: string
@@ -13,7 +14,7 @@ function Accordion(props: AccordionPropsType) {
             {!props.collapsed && <AccordionBody/>}
         </div>
     );
-};
+}
 
 type AccordionTitlePropsType = {
     title: string
@@ -22,7 +23,7 @@ type AccordionTitlePropsType = {
 
 function AccordionTitle(props: AccordionTitlePropsType) {
     return (
-        <h3 onClick={props.changeCollapsed}>== {props.title} ==</h3>
+        <h3 className={styles.cursorPointer} onClick={props.changeCollapsed}>== {props.title} ==</h3>
     )
 }
 

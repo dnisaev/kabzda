@@ -1,15 +1,15 @@
 import React, {useState} from 'react';
 import './App.css';
-import {Rating} from "./components/Rating/Rating";
+import {Rating, RatingValueType} from "./components/Rating/Rating";
 import Accordion from "./components/Accordion/Accordion";
-import OnOff from "./components/OnOff/OnOff";
+import {OnOff} from "./components/OnOff/OnOff";
 
 
 export function App() {
 
-    let [ratingValue, setRatingValue] = useState<0 | 1 | 2 | 3 | 4 | 5>(3);
-    let [accordionCollapsed, setAccordionCollapsed] = useState(false)
-    let [switchOn, setSwitchOn] = useState(false)
+    let [ratingValue, setRatingValue] = useState<RatingValueType>(3);
+    let [accordionCollapsed, setAccordionCollapsed] = useState(false);
+    let [switchOn, setSwitchOn] = useState(false);
 
     return (
         <div className={'mainWrapper'}>

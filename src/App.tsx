@@ -10,7 +10,7 @@ import './App.css';
 import {Rating} from "./components/Rating/Rating";
 import Accordion from "./components/Accordion/Accordion";
 import OnOff from "./components/OnOff/OnOff";
-import UncontrolledOnOff from "./components/OnOff/UncontrolledOnOff";
+import UncontrolledOnOff from "./components/UncontrolledOnOff/UncontrolledOnOff";
 
 
 export function App() {

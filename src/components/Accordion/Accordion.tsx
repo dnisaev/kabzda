@@ -7,7 +7,7 @@ type AccordionPropsType = {
     changeCollapsed: () => void
 }
 
-function Accordion(props: AccordionPropsType) {
+export function Accordion(props: AccordionPropsType) {
     return (
         <div>
             <AccordionTitle title={props.titleValue} changeCollapsed={props.changeCollapsed}/>
@@ -30,9 +30,9 @@ function AccordionTitle(props: AccordionTitlePropsType) {
 function AccordionBody() {
     return (
         <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
+            <li>First</li>
+            <li>Second</li>
+            <li>Third</li>
         </ul>
     )
 }

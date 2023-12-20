@@ -21,7 +21,9 @@ export const AccordionDemoStory: Story = {
 //
 
 const changeCollapsedHandler = action('collapsed!!!');
-const onClickHandler = () => {action('clicked!!!')};
+const onClickHandler = () => {
+    action('clicked!!!')
+};
 const accordionStore = [
     {title: 'First', value: v1()},
     {title: 'Second', value: v1()},
@@ -30,27 +32,32 @@ const accordionStore = [
     {title: 'White', value: v1()},
     {title: 'Green', value: v1()}
 ];
-const [accordionCollapsed, setAccordionCollapsed] = useState(false);
-const [items, setItems] = useState(accordionStore);
 
 export const AccordionDemo = () => {
-        return <Accordion titleValue={"Accordion Demo"}
-                          collapsed={accordionCollapsed}
-                          changeCollapsed={() => setAccordionCollapsed(!accordionCollapsed)}
-                          items={items}
-                          onClick={onClickHandler}/>
-    };
+
+    const [accordionCollapsed, setAccordionCollapsed] = useState(false);
+    const [items, setItems] = useState(accordionStore);
+    return <Accordion titleValue={"Accordion Demo"}
+                      collapsed={accordionCollapsed}
+                      changeCollapsed={() => setAccordionCollapsed(!accordionCollapsed)}
+                      items={items}
+                      onClick={onClickHandler}/>
+};
 export const OpenedAccordion = () => {
-        return <Accordion titleValue={"Opened Accordion"}
-                          collapsed={false}
-                          changeCollapsed={changeCollapsedHandler}
-                          items={items}
-                          onClick={onClickHandler}/>
-    };
+    const [accordionCollapsed, setAccordionCollapsed] = useState(false);
+    const [items, setItems] = useState(accordionStore);
+    return <Accordion titleValue={"Opened Accordion"}
+                      collapsed={false}
+                      changeCollapsed={changeCollapsedHandler}
+                      items={items}
+                      onClick={onClickHandler}/>
+};
 export const CollapsedAccordion = () => {
-        return <Accordion titleValue={"Collapsed Accordion"}
-                          collapsed={true}
-                          changeCollapsed={changeCollapsedHandler}
-                          items={items}
-                          onClick={onClickHandler}/>
-    };
+    const [accordionCollapsed, setAccordionCollapsed] = useState(false);
+    const [items, setItems] = useState(accordionStore);
+    return <Accordion titleValue={"Collapsed Accordion"}
+                      collapsed={true}
+                      changeCollapsed={changeCollapsedHandler}
+                      items={items}
+                      onClick={onClickHandler}/>
+};

@@ -1,4 +1,6 @@
-import React, {useState} from 'react';
+import React, {useReducer} from 'react';
+import {v1} from "uuid";
+import {reducer, TOGGLE_CONSTANT} from "./reducer";
 
 type AccordionPropsType = {
     titleValue: string
@@ -6,12 +8,14 @@ type AccordionPropsType = {
 
 function UncontrolledAccordion(props: AccordionPropsType) {
 
-    let [collapsed, setCollapsed] = useState(false);
+    // let [collapsed, setCollapsed] = useState(false);
+    let [state, dispatch] = useReducer(reducer, { collapsed: false });
 
     return (
         <div>
-            <AccordionTitle title={props.titleValue} onClick={()=>{setCollapsed(!collapsed)}} />
-            { collapsed && <AccordionBody/> }
+            {/*<AccordionTitle title={props.titleValue} onClick={()=>{setCollapsed(!collapsed)}} />*/}
+            <AccordionTitle title={props.titleValue} onClick={()=>{dispatch({type: TOGGLE_CONSTANT})}} />
+            { state.collapsed && <AccordionBody/> }
         </div>
     );
 }
@@ -28,11 +32,20 @@ function AccordionTitle(props: AccordionTitlePropsType) {
 }
 
 function AccordionBody() {
+    const store = [
+        {id: v1(), title: 'Mother'},
+        {id: v1(), title: 'Father'},
+        {id: v1(), title: 'Brother'},
+        {id: v1(), title: 'Sister'},
+        {id: v1(), title: 'Son'}
+    ];
     return (
         <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
+            {
+                store.map(s=>{
+                    return <li key={s.id}>{s.title}</li>
+                })
+            }
         </ul>
     )
 }

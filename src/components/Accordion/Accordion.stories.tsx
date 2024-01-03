@@ -1,4 +1,4 @@
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta} from '@storybook/react';
 import {Accordion} from './Accordion';
 import React, {useState} from "react";
 import {action} from '@storybook/addon-actions'
@@ -10,20 +10,9 @@ const meta: Meta<typeof Accordion> = {
 
 export default meta;
 
-type Story = StoryObj<typeof Accordion>;
-export const AccordionDemoStory: Story = {
-    args: {
-        titleValue: "Accordion Demo Story",
-        collapsed: true
-    }
-};
-
-//
-
 const changeCollapsedHandler = action('collapsed!!!');
-const onClickHandler = () => {
-    action('clicked!!!')
-};
+const onClickHandler = action('clicked!!!');
+
 const accordionStore = [
     {title: 'First', value: v1()},
     {title: 'Second', value: v1()},
@@ -34,30 +23,24 @@ const accordionStore = [
 ];
 
 export const AccordionDemo = () => {
-
     const [accordionCollapsed, setAccordionCollapsed] = useState(false);
-    const [items, setItems] = useState(accordionStore);
     return <Accordion titleValue={"Accordion Demo"}
                       collapsed={accordionCollapsed}
                       changeCollapsed={() => setAccordionCollapsed(!accordionCollapsed)}
-                      items={items}
+                      items={accordionStore}
                       onClick={onClickHandler}/>
 };
 export const OpenedAccordion = () => {
-    const [accordionCollapsed, setAccordionCollapsed] = useState(false);
-    const [items, setItems] = useState(accordionStore);
     return <Accordion titleValue={"Opened Accordion"}
                       collapsed={false}
                       changeCollapsed={changeCollapsedHandler}
-                      items={items}
+                      items={accordionStore}
                       onClick={onClickHandler}/>
 };
 export const CollapsedAccordion = () => {
-    const [accordionCollapsed, setAccordionCollapsed] = useState(false);
-    const [items, setItems] = useState(accordionStore);
     return <Accordion titleValue={"Collapsed Accordion"}
                       collapsed={true}
                       changeCollapsed={changeCollapsedHandler}
-                      items={items}
+                      items={accordionStore}
                       onClick={onClickHandler}/>
 };

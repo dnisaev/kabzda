@@ -35,18 +35,28 @@ export const SetTimeoutSetIntervalExample = () => {
     const [fake, setFake] = useState(0);
     const [timer, setTimer] = useState(0);
 
-    // useEffect(() => {
-    //     setTimeout(()=>{
-    //         console.log('setTimeout render')
-    //         document.title = counter.toString()
-    //     }, 1000);
-    // }, [counter]);
+    useEffect(() => {
+        const timeout = setTimeout(()=>{
+            console.log('setTimeout render')
+            document.title = counter.toString()
+        }, 1000);
 
-    // useEffect(() => {
-    //     setInterval(() => {
-    //         setTimer(state => state + 1)
-    //     }, 1000);
-    // }, []);
+        return () => {
+            clearTimeout(timeout);
+        };
+
+    }, [counter]);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setTimer(state => state + 1)
+        }, 1000);
+
+        return () => {
+            clearInterval(interval);
+        };
+
+    }, []);
 
     return <>
         <div>Counter, {counter}</div>
